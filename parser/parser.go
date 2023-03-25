@@ -96,6 +96,8 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 		return nil
 	}
 
+	p.nextToken()
+
 	// TODO: セミコロンに遭遇するまで式を読み飛ばしてしまっている
 	if !p.curTokenIs(token.SEMICOLON) {
 		p.nextToken()
